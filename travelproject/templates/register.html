@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <title>Table</title>
+<style>
+#titleid{
+background-color:#800000;
+}
+.demo{
+background-color:#C24641;
+align:center;
+  width: 100%;
+  padding: 12px 20px;
+
+  display: inline-block;
+  border: 1px solid #ccc;
+
+}
+label {
+  width: 30%;
+  text-align: right;
+}
+input[type=text],input[type=password],input[type=email] {
+  width: 30%;
+  text-align: left;
+  padding:2px 20px;
+  margin:4px;
+}
+input[type=radio]{
+  text-align: left;
+  padding:2px 20px;
+  margin:4px;
+}
+.demo1{
+  text-align: center;
+  padding:20px 20px;
+  margin:4px;
+}
+.submitbutton{
+ border: 10px solid #800517;
+font-size:20px;
+ float: center;
+  width: 20%;
+
+}
+</style>
+</head>
+
+<body>
+
+<form method="post" action="register" >
+  {% csrf_token %}
+  <div class="demo">
+    <h1 id="titleid">Customer Registration</h1>
+    <label style="float: left;" ><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" ><br>
+    <label style="float: left;" ><b>Email</b></label>
+    <input type="email" placeholder="Enter Email" name="email" ><br>
+    <label style="float: left;" ><b>First Name</b></label>
+    <input type="text" placeholder="First Name" name="first_name" ><br>
+     <label  style="float: left;"><b>Last Name</b></label>
+     <input type="text" placeholder="Last Name" name="last_name" ><br>
+    <label style="float: left;" ><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" ><br>
+    <label style="float: left;" ><b>Confirm Password</b></label>
+    <input type="password" placeholder="Confirm Password" name="psw-repeat" ><br>
+    <label>
+      <input type="checkbox" checked="checked" name="agree" style="margin-bottom:15px"> i agree to the terms and conditions
+    </label>
+    <div class="demo1">
+      <input type="submit" class="submitbutton" value="Submit" >
+    </div>
+  </div>
+</form>
+{% for msg in messages %}
+{{ msg }}
+{% endfor %}
+</body>
+</html>
