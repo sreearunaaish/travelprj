@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <title>Table</title>
+<style>
+#titleid{
+background-color:#2E8B57;
+}
+.demo{
+background-color:#348781;
+align:center;
+  width: 100%;
+  padding: 12px 20px;
+
+  display: inline-block;
+  border: 1px solid #ccc;
+
+}
+label {
+  width: 30%;
+  text-align: right;
+}
+input[type=text],input[type=password]{
+  width: 30%;
+  text-align: left;
+  padding:2px 20px;
+  margin:4px;
+}
+.demo1{
+  text-align: center;
+  padding:20px 20px;
+  margin:4px;
+}
+.submitbutton{
+ border: 10px solid #00A36C;
+font-size:20px;
+ float: center;
+  width: 20%;
+
+}
+</style>
+</head>
+
+<body>
+
+<form method="post" action="login" >
+    {% csrf_token %}
+  <div class="demo">
+ <h1 id="titleid">Login</h1>
+    <label style="float: left;" ><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" ><br>
+
+    <label style="float: left;" ><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" ><br>
+    <div class="demo1">
+      <input type="submit" class="submitbutton" value="Login" >
+    </div>
+  </div>
+</form>
+
+</body>
+</html>
